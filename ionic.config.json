@@ -1,0 +1,7 @@
+{
+  "name": "healthy-tiffin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
