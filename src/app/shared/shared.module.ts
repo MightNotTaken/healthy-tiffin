@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { ChipComponent } from './chip/chip.component';
 import { VenueFiguresComponent } from './venue-figures/venue-figures.component';
+import { CusineCardComponent } from './cusine-card/cusine-card.component';
 
 
 
@@ -11,7 +12,8 @@ import { VenueFiguresComponent } from './venue-figures/venue-figures.component';
   declarations: [
     HeaderComponent,
     ChipComponent,
-    VenueFiguresComponent
+    VenueFiguresComponent,
+    CusineCardComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { VenueFiguresComponent } from './venue-figures/venue-figures.component';
   exports: [
     HeaderComponent,
     ChipComponent,
-    VenueFiguresComponent
+    VenueFiguresComponent,
+    CusineCardComponent
   ]
 })
 export class SharedModule { }

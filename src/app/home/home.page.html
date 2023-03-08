@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true" class="">
+<ion-content [fullscreen]="true">
   <app-header></app-header>
   <div class="content full-width">
     <ion-text class="text medium big">Discover new places</ion-text>
@@ -7,11 +7,11 @@
     </div>
     <div class="horizontal-scroll">
       <app-chip
-      (click)="loadVenue(i)"
-      *ngFor="let chip of venueTypes; index as i"
-      [text]="chip.text"
-      type="inverse"
-      [color]="chip.active ? 'primary' : 'normal'"
+        (click)="loadVenue(i)"
+        *ngFor="let chip of venueTypes; index as i"
+        [text]="chip.text"
+        type="inverse"
+        [color]="chip.active ? 'primary' : 'normal'"
       ></app-chip>
     </div>
     <div class="restaurants">

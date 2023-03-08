@@ -1,9 +1,64 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>venue-main</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<div class="container full-dimensions">
+  <div class="dp" #dp>
+    <img src="./../../../assets/images/2-main.png" alt="">
+    <app-header [headerData]="headerData"></app-header>
+  </div>
+  <div class="content" #content>
+    <div class="heading flex space-between vcenter">
+      <ion-text class="text medium" (click)="openTodaysMenu()">Chief Restaurant</ion-text>
+      <ion-select class="text medium small" value="Today" placeholder="Select day">
+        <ion-select-option value="Today">Today</ion-select-option>
+        <ion-select-option value="Tomorrow">Tomorrow</ion-select-option>
+        <ion-select-option value="Yesterday">Yesterday</ion-select-option>
+      </ion-select>
+    </div>
+  </div>
+  <div #chips class="full-width time-chips horizontal-scroll">
+    <app-chip (click)="loadTiming(i)" *ngFor="let chip of timings; index as i"  size="small" [color]="chip.active ? 'primary' : ''" [text]="chip.time"></app-chip>
+  </div>
+  
+  <div [ngStyle]="{'max-height': modalHeight + 'px'}" class="modal full-width flex start vcenter column beautiful-shadow">
+    <div class="upper full-width">
+      <div class="notch"></div>
+      <div class="name">
+        <ion-text class="text medium">Star Restaurant</ion-text>
+      </div>
+  
+      <app-venue-figures></app-venue-figures>
+      <div class="galary flex">
+        <div class="left">
+          <img src="./../../../assets/images/home rest-1.png" alt="">
+        </div>
+        <div class="right block">
+          <div class="img-container scrollable">
+            <div class="box">
+              <img src="./../../../assets/images/home rest-1.png" alt="">
+            </div>
+            <div class="box">
+              <img src="./../../../assets/images/home rest-1.png" alt="">
+            </div>
+  
+            <div class="box">
+              <div class="card full-dimensions flex center vcenter">
+                <ion-text color="primary" class="text medium">+ 5</ion-text>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="additional fill-space full-width flex end column vstart">
+      <div class=" full-width">
+        <div class="heading flex space-between vcenter">
+          <ion-text class="text medium">Fleece Restaurant</ion-text>
+        </div>  
+        <div class="cusines horizontal-scroll full-width">
+          <app-cusine-card classes="full-width"></app-cusine-card>
+          <app-cusine-card></app-cusine-card>
+          <app-cusine-card></app-cusine-card>
+        </div>        
+      </div>
+    </div>
+  </div>
+</div>

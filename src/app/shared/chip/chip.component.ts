@@ -7,9 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ChipComponent implements OnInit {
   @Input() color = 'light';
-  @Input() text = 'sample chip';
+  @Input() text = 'Chip';
   @Input() size = 'normal';
   @Input() type = 'normal';
+  @Input() shape = 'round';
   constructor() { }
 
   ngOnInit() {}

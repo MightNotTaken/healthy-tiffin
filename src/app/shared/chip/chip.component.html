@@ -1,1 +1,11 @@
-<div class="chip ion-activatable ripple-parent beautiful-shadow" [class.small]="size === 'small'" [class.smaller]="size === 'smaller'" [class.active]="color === 'primary'" [class.dark]="color === 'dark'" [class.inverse]="type === 'inverse'">{{text}}<ion-ripple-effect></ion-ripple-effect></div>
+<div
+  [class]="'chip ion-activatable ripple-parent beautiful-shadow ' + shape"
+  [class.small]="size === 'small'"
+  [class.smaller]="size === 'smaller'"
+  [class.active]="color === 'primary'"
+  [class.dark]="color === 'dark'"
+  [class.inverse]="type === 'inverse'"
+>
+  {{text}}
+  <ion-ripple-effect></ion-ripple-effect>
+</div>

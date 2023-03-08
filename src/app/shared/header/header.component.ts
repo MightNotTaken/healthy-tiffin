@@ -14,7 +14,8 @@ export class HeaderComponent  implements OnInit {
         console.log('left');
       }
     },
-    color: 'light',
+    color: 'white',
+    bgColor: 'light',
     right: {
       icon: 'ellipsis-vertical',
       handler: () => {

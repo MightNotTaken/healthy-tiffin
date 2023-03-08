@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -50,7 +51,11 @@ export class HomePage {
       type: 'Hatti'
     }
   ];
-  constructor() {}
+  constructor(
+    private router: Router
+  ) {
+    this.router.navigate(['todya-menu']);
+  }
   loadVenue(index: number) {
     for (let i=0; i<this.venues.length; i++) {
       this.venueTypes[i].active = i === index;
