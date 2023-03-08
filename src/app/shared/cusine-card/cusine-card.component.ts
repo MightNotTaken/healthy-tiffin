@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cusine-card',
@@ -8,6 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CusineCardComponent  implements OnInit {
   @Input() classes = '';
   @Input() showButton = true;
+  @Input() data = {
+    title: 'Green Salad',
+    subTitle: 'Vegetarian Pizza',
+    price: '$8.0'
+  };
+  
   constructor() { }
 
   ngOnInit() {}

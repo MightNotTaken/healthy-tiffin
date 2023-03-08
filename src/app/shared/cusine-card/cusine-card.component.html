@@ -2,8 +2,9 @@
   <img src="./../../../assets/images/2-m2.png" alt="">
 
   <div class="name-price flex start vstart column">
-    <ion-text class="text medium">Green Salad</ion-text>
-    <ion-text class="text medium" color="primary">$7.0</ion-text>
+    <ion-text class="text medium">{{data.title}}</ion-text>
+    <ion-text class="text medium small" color="medium" *ngIf="data.subTitle">{{data.subTitle}}</ion-text>
+    <ion-text class="text medium" color="primary">{{data.price}}</ion-text>
   </div>
   <div *ngIf="showButton" class="add">
     <app-chip color="primary" text="+" size="small" shape="rounded-corner button"></app-chip>

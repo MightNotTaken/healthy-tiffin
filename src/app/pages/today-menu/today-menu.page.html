@@ -1,9 +1,14 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>today-menu</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<ion-content [fullscreen]="true">
+  <app-header color="dark" [headerData]="headerData"></app-header>
+  <div class="top-text">
+    <ion-text class="text menu-text medium">Today's Menu</ion-text>
+    <div class="sub-header">
+      <ion-text class="text medium" color="medium">Marigold</ion-text>
+    </div>
+  </div>
+  <div class="content scrollable" [ngStyle]="{'height': 'calc(100% - 9.7rem)'}">
+    <div class="cusine-card" *ngFor="let item of menu">
+      <app-cusine-card [data]="getDisplayData(item)" [showButton]="false"></app-cusine-card>
+    </div>
+  </div>
 </ion-content>

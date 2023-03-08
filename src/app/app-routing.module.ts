@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'today-menu',
     loadChildren: () => import('./pages/today-menu/today-menu.module').then( m => m.TodayMenuPageModule)
   },
+  {
+    path: 'our-menus',
+    loadChildren: () => import('./pages/our-menus/our-menus.module').then( m => m.OurMenusPageModule)
+  },
 ];
 
 @NgModule({
