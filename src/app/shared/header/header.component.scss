@@ -1,0 +1,19 @@
+.header {
+    padding: 10px;
+    padding-top: 2rem;
+    padding-bottom: 5px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+    &.transparent {
+        background-color: transparent;
+    }
+    ion-fab-button {
+        --background: transparent;
+        --box-shadow: none;
+        ion-icon {
+            font-size: 1.6rem;
+        }
+    }
+}

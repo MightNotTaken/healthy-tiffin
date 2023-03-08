@@ -24,3 +24,423 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/fonts/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+  font-family: "Poppins-bold";
+  src: url(./assets/fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Poppins-medium";
+  src: url(./assets/fonts/Poppins/Poppins-Medium.ttf);
+}
+
+ion-app {
+  margin-top: env(safe-area-inset-top);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+.bold {
+  font-family: "Poppins-bold";
+}
+.medium {
+  font-family: "Poppins-medium";
+}
+
+.transparent {
+  background-color: transparent !important;
+  --background: transparent !important;
+}
+
+.full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.absolute {
+  position: absolute;
+
+  &-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-bottom {
+    bottom: 0;
+    &-center {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &-right {
+    right: 0;
+  }
+
+  &-top {
+    top: 0;
+  }
+  &-left {
+    left: 0;
+  }
+
+  &.inverted {
+    transform: translate(-50%, -50%) rotate(180deg);
+
+    &-x {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    &-y {
+      transform: translate(-50%, -50%) rotateY(180deg);
+    }
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.end {
+    justify-content: flex-end;
+  }
+
+  &.start {
+    justify-content: flex-start;
+  }
+
+  &.stretch {
+    align-items: stretch;
+  }
+
+  &.space {
+    &-between {
+      justify-content: space-between;
+    }
+
+    &-around {
+      justify-content: space-around;
+    }
+
+    &-evenly {
+      justify-content: space-evenly;
+    }
+  }
+
+  &.fill-space {
+    flex: 1 1 auto;
+  }
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &.column-reverse {
+    flex-direction: column-reverse;
+  }
+
+  &.vcenter {
+    align-items: center;
+  }
+
+  &.vend {
+    align-items: flex-end;
+  }
+
+  &.vstart {
+    align-items: flex-start;
+  }
+
+  &.distribute-in {
+    &-row {
+      flex-flow: row wrap;
+    }
+
+    &-column {
+      flex-flow: column wrap;
+    }
+  }
+}
+.fill-space {
+  flex: 1 1 auto;
+}
+
+.horizontal-scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+
+  & > * {
+    display: inline-block !important;
+  }
+}
+
+.block {
+  display: block;
+
+  &.center {
+    margin: auto;
+  }
+}
+
+.poppins-bold {
+  font-family: "Poppins-bold";
+  font-weight: bold;
+}
+
+.beautiful-shadow {
+  box-shadow: -2px 2px 10px #00000017;
+  --box-shadow: -2px 2px 10px #00000017;
+  &.inverted {
+    box-shadow: -2px 2px 10px #ffffff80;
+  }
+}
+
+.no-shadow {
+  box-shadow: none !important;
+  --box-shadow: none !important;
+}
+
+.text {
+  &.small {
+    font-size: 0.8rem;
+  }
+  &.shade {
+    color: #515151;
+  }
+  &.white {
+    color: #ffffff;
+  }
+
+  &.dark {
+    color: #000;
+  }
+
+  &.center {
+    text-align: center;
+  }
+  &.uppercase {
+    text-transform: uppercase;
+  }
+  &.lowercase {
+    text-transform: lowercase;
+  }
+  &.capitalize {
+    text-transform: capitalize;
+  }
+}
+ion-fab-button {
+  width: 40px;
+  height: 40px;
+  &.small {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(#000, 0.6);
+  &.transparent {
+    background: transparent;
+  }
+}
+
+.custom-card {
+  border-radius: 20px;
+  overflow: visible;
+  width: 92vw;
+  border-radius: 28px;
+
+  .title {
+    font-size: 1.2rem;
+    color: black;
+    margin-bottom: 0.6rem;
+  }
+}
+
+.small-img {
+  width: 40px;
+  height: 40px;
+
+  &.with-margin {
+    margin-right: 0.4rem;
+  }
+}
+
+.margin {
+  &-left {
+    margin-left: 0.4rem;
+  }
+
+  &-top {
+    margin-top: 0.4rem;
+  }
+
+  &-right {
+    margin-right: 0.4rem;
+  }
+
+  &-bottom {
+    margin-bottom: 0.4rem;
+  }
+}
+
+.test {
+  border: 1px solid red;
+  .test {
+    border: 1px solid rgb(65, 6, 133);
+    .test {
+      border: 1px solid green;
+      .test {
+        border: 1px solid cyan;
+        .test {
+          border: 1px solid rgb(54, 10, 17);
+          .test {
+            border: 1px solid rgb(79, 179, 104);
+            .test {
+              border: 1px solid yellow;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+ion-accordion-group {
+  &.hide-toggle {
+    ion-accordion {
+      ion-item {
+        ion-icon {
+          &.ion-accordion-toggle-icon {
+            font-size: 0px !important;
+          }
+        }
+      }
+    }
+  }
+
+  ion-accordion {
+    ion-item {
+      ion-icon {
+        &.ion-accordion-toggle-icon {
+          font-size: 18px !important;
+          color: #afafaf;
+        }
+      }
+    }
+  }
+}
+
+.scrollable {
+  overflow: scroll;
+}
+
+.user {
+  margin-bottom: 1rem;
+  img {
+    margin-right: 1rem !important;
+  }
+}
+
+.no-shadow {
+  box-shadow: none;
+}
+
+ion-button {
+  font-size: 12px;
+}
+
+ion-checkbox {
+  --size: 16px;
+  --checkmark-width: 2px;
+}
+
+ion-button {
+  &.light {
+    --background: #bbbbbb;
+  }
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 98089089080989080980;
+}
+
+.search-bar {
+  padding: 0 0.6rem;
+  ion-searchbar {
+    --border-radius: 10rem;
+    --box-shadow: -2px 2px 10px #00000017;
+    --background: white;
+  }
+}
+.local-loader {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.full-dimensions {
+  width: 100%;
+  height: 100%;
+}
+
+.place {
+  &-start {
+    top: 0;
+    left: 0;
+  }
+  &-end {
+    top: 100%;
+    left: 100%;
+  }
+}
+////////
+.error-message {
+  color: #ff0043;
+  font-size: 12px;
+}
+.ap-logo-div {
+  // height: 200px;
+  margin-top: -36px;
+  padding: 24px;
+}

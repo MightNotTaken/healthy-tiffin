@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'venue-main',
+    loadChildren: () => import('./pages/venue-main/venue-main.module').then( m => m.VenueMainPageModule)
+  },
 ];
 
 @NgModule({

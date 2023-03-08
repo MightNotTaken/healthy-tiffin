@@ -1,0 +1,10 @@
+<div class="card beautiful-shadow" (click)="openRestaurantDetails()">
+  <img [src]="'assets/images/' + data.imgSrc"/>
+  <ion-card-title class="text medium title">{{data.name}}</ion-card-title>
+  <app-venue-figures [data]="{
+    priceRange: data.priceRange,
+    distance: data.distance,
+    type: data.type
+  }"></app-venue-figures>
+
+</div>

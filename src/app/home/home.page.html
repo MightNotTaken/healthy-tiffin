@@ -1,20 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content [fullscreen]="true" class="">
+  <app-header></app-header>
+  <div class="content full-width">
+    <ion-text class="text medium big">Discover new places</ion-text>
+    <div class="seachbar">
+      <ion-searchbar></ion-searchbar>
+    </div>
+    <div class="horizontal-scroll">
+      <app-chip
+      (click)="loadVenue(i)"
+      *ngFor="let chip of venueTypes; index as i"
+      [text]="chip.text"
+      type="inverse"
+      [color]="chip.active ? 'primary' : 'normal'"
+      ></app-chip>
+    </div>
+    <div class="restaurants">
+      <div class="heading flex space-between center">
+        <ion-text class="text medium">Popular Restaurants</ion-text>
+        <ion-text class="text medium" color="primary">View All</ion-text>
+      </div>
+      <app-restaurant-card *ngFor="let venue of venues" [data]="venue"></app-restaurant-card>
+    </div>
   </div>
 </ion-content>

@@ -1,0 +1,11 @@
+<div class="header full-width flex space-between center" [class.transparent]="headerData.color === 'transparent'">
+  <ion-fab-button (click)="headerData.left?.handler()">
+    <ion-icon *ngIf="headerData.left" [name]="headerData.left.icon" color="dark"></ion-icon>
+  </ion-fab-button>
+  <ng-container *ngIf="headerData.text">
+    <ion-text class="bold">{{headerData.text}}</ion-text>
+  </ng-container>
+  <ion-fab-button (click)="headerData.right?.handler()">
+    <ion-icon *ngIf="headerData.right" [name]="headerData.right.icon" color="dark"></ion-icon>
+  </ion-fab-button>
+</div>
