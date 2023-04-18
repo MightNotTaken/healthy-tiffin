@@ -1,0 +1,36 @@
+.meal-img {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    img {
+        width: 60vw;
+        max-width: 10rem;
+        border-radius: 10rem;
+    }
+}
+
+.nutrition-chips {
+    .chip {
+        margin-right: .8rem;
+    }
+}
+
+.content {
+    padding: 10px;
+}
+.ingredients {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.card {
+    margin-top: 1rem;
+    padding: 14px;
+    border-radius: 14px;
+    ion-text {
+        margin-bottom: .4rem;
+    }
+}
+
+.heading {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

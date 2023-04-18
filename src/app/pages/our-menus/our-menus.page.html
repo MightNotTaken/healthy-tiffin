@@ -1,9 +1,20 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>our-menus</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
+  <app-header color="dark" [headerData]="headerData"></app-header>
+  <div class="tabs flex space-between center">
+    <div (click)="loadMenu(i)" *ngFor="let type of menus; index as i" class="tab">
+      <app-chip [text]="type.text" [type]="type.active ? 'normal' : 'inverse'" shape="rounded-corner"></app-chip>
+    </div>
+  </div>
+  <div class="content">
+    <app-cusine-detailed-card></app-cusine-detailed-card>
+    <div class="rname">
+      <ion-text class="text medium">Restaurant Name</ion-text>
+    </div>
 
-<ion-content>
-
+    <div class="flex start vstart cusines full-width distribute-in-row">
+      <div class="cusine" *ngFor="let item of items">
+        <app-cusine-detailed-card [item]="item" [size]="item.size"></app-cusine-detailed-card>
+      </div>
+    </div>
+  </div>
 </ion-content>

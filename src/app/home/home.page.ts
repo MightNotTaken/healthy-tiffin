@@ -54,7 +54,6 @@ export class HomePage {
   constructor(
     private router: Router
   ) {
-    this.router.navigate(['todya-menu']);
   }
   loadVenue(index: number) {
     for (let i=0; i<this.venues.length; i++) {

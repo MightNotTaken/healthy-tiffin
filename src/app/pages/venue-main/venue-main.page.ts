@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 
 @Component({
@@ -13,10 +13,19 @@ export class VenueMainPage implements OnInit, AfterViewInit {
     color: 'white',
     bgColor: 'transparent',
     left: {
-      icon: 'arrow-back'
+      icon: 'arrow-back',
+      handler: () => {
+        this.router.navigate(['home']);
+      } 
+    },
+    right: {
+      icon: 'menu',
+      handler: () => {
+        this.openTodaysMenu();
+      }
     }
   }
-  data = {
+  data: any = {
     imgSrc: 'home rest-1.png'
   }
   timings = [
@@ -40,6 +49,26 @@ export class VenueMainPage implements OnInit, AfterViewInit {
       time: '15:00'
     }
   ];
+  cusines = [
+    {
+      title: 'Cutlets',
+      subTitle: 'Chicken Cutlets',
+      price: '$12.0',
+      imgSrc: '2.jpg'  
+    },
+    {
+      title: 'Green Salad',
+      subTitle: '---',
+      price: '$6.0',
+      imgSrc: '14.jpg'  
+    },
+    {
+      title: 'Fish Fry',
+      subTitle: 'Served with Lemon',
+      price: '$8.0',
+      imgSrc: 'fish.png'  
+    }
+  ];
   @ViewChild('dp', {static: true}) dp?: ElementRef;
   @ViewChild('content', {static: true}) content?: ElementRef;
   @ViewChild('chips', {static: true}) chips?: ElementRef;
@@ -47,10 +76,20 @@ export class VenueMainPage implements OnInit, AfterViewInit {
   modalHeight = 2000;
   constructor(
     private platform: Platform,
-    private router: Router
+    private router: Router,
+    private acivatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.acivatedRoute.queryParamMap.subscribe((params: any) => {
+      try {
+        const data = JSON.parse(params.get('data'));
+        this.data = data;
+        console.log(data)
+      } catch (error) {
+        console.error(error);
+      }
+    });
   }
 
   loadTiming(index: number) {
@@ -71,7 +110,11 @@ export class VenueMainPage implements OnInit, AfterViewInit {
   }
 
   openTodaysMenu() {
-    this.router.navigate(['today-menu']);
+    this.router.navigate(['our-menus'], {
+      queryParams: {
+        data: JSON.stringify(this.data)
+      }
+    });
   }
 
 }

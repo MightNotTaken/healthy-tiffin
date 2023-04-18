@@ -1,0 +1,30 @@
+<ion-content [fullscreen]="true">
+  <app-header [headerData]="headerData"></app-header>
+  <div class="content">
+    <div class="meal-img full-width flex center vcenter">
+      <img class="beautiful-shadow " src="assets/images/meal.png" alt="">
+    </div>
+    <div class="nutrition-chips horizontal-scroll flex center vcenter">
+      <div class="chip" *ngFor="let nutrient of nutrients">
+        <app-nutrition-chip [data]="nutrient"></app-nutrition-chip>
+      </div>
+    </div>
+    <div class="ingredients">
+      <div class="heading">
+        <ion-text class="text medium">Ingredients</ion-text>
+      </div>
+      <div class="card full-width beautiful-shadow flex start vstart column">
+        <ion-text class="text medium small" color="medium">8 Skinless boneless fish fillets</ion-text>
+        <ion-text class="text medium small" color="medium">Half a cup of boiled rice</ion-text>
+        <ion-text class="text medium small" color="medium">1 Cup chopped tomatoes, boiled or steamed</ion-text>
+      </div>
+    </div>
+    
+    <div class="heading">
+      <ion-text class="text medium">Similar Menüs</ion-text>
+    </div>
+    <app-cusine-card [data]="additionalCusine"></app-cusine-card>
+    <app-cusine-card [data]="additionalCusine"></app-cusine-card>
+    <app-cusine-card [data]="additionalCusine"></app-cusine-card>
+  </div>
+</ion-content>

@@ -1,12 +1,17 @@
-<div [class]="'card beautiful-shadow flex start vcenter ' + classes">
-  <img src="./../../../assets/images/2-m2.png" alt="">
+<div [class]="'card beautiful-shadow flex space-between vcenter ' + classes">
+  <div class="flex start vcenter">
+    <img [src]="'assets/images/' + data.imgSrc" alt="">
 
-  <div class="name-price flex start vstart column">
-    <ion-text class="text medium">{{data.title}}</ion-text>
-    <ion-text class="text medium small" color="medium" *ngIf="data.subTitle">{{data.subTitle}}</ion-text>
-    <ion-text class="text medium" color="primary">{{data.price}}</ion-text>
+    <div class="name-price flex start vstart column">
+      <ion-text class="text medium">{{data.title}}</ion-text>
+      <ion-text class="text medium small" color="medium" *ngIf="data.subTitle">{{data.subTitle}}</ion-text>
+      <ion-text class="text medium" color="primary">{{data.price}}</ion-text>
+    </div>
   </div>
+
   <div *ngIf="showButton" class="add">
-    <app-chip color="primary" text="+" size="small" shape="rounded-corner button"></app-chip>
+    <div class="add ion-activatable ripple-parent beautiful-shadow flex center vcenter">
+      +
+    </div>
   </div>
 </div>

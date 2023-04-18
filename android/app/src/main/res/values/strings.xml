@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">healthy-tiffin</string>
+    <string name="title_activity_main">healthy-tiffin</string>
+    <string name="package_name">com.tahir.tiffin.healthy</string>
+    <string name="custom_url_scheme">com.tahir.tiffin.healthy</string>
+</resources>

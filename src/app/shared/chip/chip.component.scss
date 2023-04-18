@@ -19,8 +19,14 @@
     &.active {
         background-color: var(--ion-color-primary);
         color: white;
+        ion-text {
+            color: white;
+        }
         &.inverse {
-            color: var(--ion-color-primary);
+            ion-text {
+                color: var(--ion-color-primary) !important;
+            }
+
             background-color: transparent;
         }
     }
@@ -47,5 +53,9 @@
     &.button {
         padding: .4rem;
         min-width: 2.4rem;
+    }
+    &.normal {
+        // background-color: white;
+        color: var(--ion-color-dark);
     }
 }

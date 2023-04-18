@@ -1,0 +1,32 @@
+.tabs {
+    width: calc(100% - 2rem);
+    margin: auto;
+    margin-top: 1rem;
+    padding: .2rem;
+    background-color: #F5F5F5;
+    border-radius: 1rem;
+    .tab {
+        width: calc(33% - .2rem);
+    }
+}
+.content {
+    padding: 14px;
+    .cusines {
+        .cusine {
+            &:nth-child(odd) {
+                margin-right: .4rem;
+            }
+            &:nth-child(even) {
+                margin-left: .4rem;
+            }
+            margin-bottom: .8rem;
+        }
+    }
+    .rname {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        ion-text {
+            font-size: 1.2rem;
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-today-menu',
@@ -9,71 +10,89 @@ export class TodayMenuPage implements OnInit {
   headerData = {
     text: 'Home',
     left: {
-      icon: 'menu',
+      icon: 'arrow-back',
       handler: () => {
-        console.log('left');
+        this.router.navigate(['our-menus'], {
+          queryParams: {
+            data: this.data
+          }
+        });
       }
     },
     color: 'dark',
-    bgColor: 'light',
-    right: {
-      icon: 'ellipsis-vertical',
-      handler: () => {
-        console.log('right');
-      }
-    }
+    bgColor: 'light'
   };
   menu = [
     {
       title: 'Salad',
       subTitle: 'Green Salad',
-      price: '$6.0'
+      price: '$6.0',
+      imgSrc: 'meal.png'
     },
     {
       title: 'Chicken',
       subTitle: 'Chicken Fry',
-      price: '$20.0'
+      price: '$20.0',
+      imgSrc: '6.jpg'
     },
     {
       title: 'Pizza',
-      subTitle: 'Vegetarian Pizza',
-      price: '$8.0'
+      subTitle: 'Veg Pizza',
+      price: '$8.0',
+      imgSrc: '10.jpg'
     },
     {
-      title: 'Meat',
-      subTitle: 'Meat Plate',
-      price: '$18.0'
+      title: 'Burger',
+      subTitle: 'Nonveg Burger',
+      price: '$18.0',
+      imgSrc: '7.jpg'
     },
     {
-      title: 'Salad',
-      subTitle: 'Green Salad',
-      price: '$6.0'
+      title: 'Fish',
+      subTitle: '---',
+      price: '$6.0',
+      imgSrc: 'fish.png'
     },
     {
-      title: 'Chicken',
-      subTitle: 'Chicken Fry',
-      price: '$20.0'
+      title: 'Brownies',
+      subTitle: 'Freshly Baked',
+      price: '$20.0',
+      imgSrc: '15.jpg'
     },
     {
-      title: 'Pizza',
-      subTitle: 'Vegetarian Pizza',
-      price: '$8.0'
+      title: 'Rolls',
+      subTitle: 'Chicken Rolls',
+      price: '$8.0',
+      imgSrc: '3.jpg'
     },
     {
-      title: 'Meat',
-      subTitle: 'Meat Plate',
-      price: '$18.0'
+      title: 'Appetizers',
+      subTitle: 'Mixed ',
+      price: '$18.0',
+      imgSrc: '9.jpg'
     }
   ];
-  constructor() { }
+  data: any = null;
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.activatedRoute.queryParamMap.subscribe((params) => {
+      try {
+        this.data = params.get('data');
+      } catch (error) {
+        console.error(error);
+      }
+    })
   }
 
   getDisplayData(item: any): any {
     return {
       title: item.title,
       subTitle: item.subTitle,
+      imgSrc: item.imgSrc
     }
   }
 

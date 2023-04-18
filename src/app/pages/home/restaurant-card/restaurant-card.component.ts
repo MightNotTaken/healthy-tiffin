@@ -23,7 +23,7 @@ export class RestaurantCardComponent  implements OnInit {
   openRestaurantDetails() {
     this.router.navigate(['venue-main'], {
       queryParams: {
-        id: 0
+        data: JSON.stringify(this.data)
       }
     });
   }

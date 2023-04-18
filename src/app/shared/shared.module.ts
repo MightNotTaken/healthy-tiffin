@@ -5,6 +5,8 @@ import { IonicModule } from '@ionic/angular';
 import { ChipComponent } from './chip/chip.component';
 import { VenueFiguresComponent } from './venue-figures/venue-figures.component';
 import { CusineCardComponent } from './cusine-card/cusine-card.component';
+import { CusineDetailedCardComponent } from './cusine-detailed-card/cusine-detailed-card.component';
+import { NutritionChipComponent } from './nutrition-chip/nutrition-chip.component';
 
 
 
@@ -13,7 +15,9 @@ import { CusineCardComponent } from './cusine-card/cusine-card.component';
     HeaderComponent,
     ChipComponent,
     VenueFiguresComponent,
-    CusineCardComponent
+    CusineCardComponent,
+    CusineDetailedCardComponent,
+    NutritionChipComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +27,9 @@ import { CusineCardComponent } from './cusine-card/cusine-card.component';
     HeaderComponent,
     ChipComponent,
     VenueFiguresComponent,
-    CusineCardComponent
+    CusineCardComponent,
+    CusineDetailedCardComponent,
+    NutritionChipComponent
   ]
 })
 export class SharedModule { }

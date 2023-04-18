@@ -11,7 +11,8 @@ export class CusineCardComponent  implements OnInit {
   @Input() data = {
     title: 'Green Salad',
     subTitle: 'Vegetarian Pizza',
-    price: '$8.0'
+    price: '$8.0',
+    imgSrc: '2-m2.png'
   };
   
   constructor() { }

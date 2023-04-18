@@ -1,11 +1,16 @@
-<div class="container full-dimensions">
+<div class="container full-dimensions scrollable">
   <div class="dp" #dp>
-    <img src="./../../../assets/images/2-main.png" alt="">
+    <img [src]="'assets/images/' + data.imgSrc" alt="">
     <app-header [headerData]="headerData"></app-header>
   </div>
-  <div class="content" #content>
-    <div class="heading flex space-between vcenter">
-      <ion-text class="text medium" (click)="openTodaysMenu()">Chief Restaurant</ion-text>
+  <div class="data">
+
+    <div class="content " #content>
+      <div class="heading flex space-between vcenter ">
+      <div class="text">
+        <ion-text class="text medium">{{data.name}}</ion-text>
+      </div>
+      
       <ion-select class="text medium small" value="Today" placeholder="Select day">
         <ion-select-option value="Today">Today</ion-select-option>
         <ion-select-option value="Tomorrow">Tomorrow</ion-select-option>
@@ -17,7 +22,7 @@
     <app-chip (click)="loadTiming(i)" *ngFor="let chip of timings; index as i"  size="small" [color]="chip.active ? 'primary' : ''" [text]="chip.time"></app-chip>
   </div>
   
-  <div [ngStyle]="{'max-height': modalHeight + 'px'}" class="modal full-width flex start vcenter column beautiful-shadow">
+  <div class="modal full-width block beautiful-shadow">
     <div class="upper full-width">
       <div class="notch"></div>
       <div class="name">
@@ -37,7 +42,7 @@
             <div class="box">
               <img src="./../../../assets/images/home rest-1.png" alt="">
             </div>
-  
+            
             <div class="box">
               <div class="card full-dimensions flex center vcenter">
                 <ion-text color="primary" class="text medium">+ 5</ion-text>
@@ -54,11 +59,10 @@
           <ion-text class="text medium">Fleece Restaurant</ion-text>
         </div>  
         <div class="cusines horizontal-scroll full-width">
-          <app-cusine-card classes="full-width"></app-cusine-card>
-          <app-cusine-card></app-cusine-card>
-          <app-cusine-card></app-cusine-card>
+          <app-cusine-card *ngFor="let data of cusines" [data]="data"></app-cusine-card>
         </div>        
       </div>
     </div>
   </div>
+</div>
 </div>

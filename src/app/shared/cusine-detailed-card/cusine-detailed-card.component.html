@@ -1,0 +1,11 @@
+<div class="card beautiful-shadow flex center vstart column" [class.small]="size === 'small'">
+  <img (click)="showCusineDetails()" [src]="'assets/images/' + item.imgSrc" alt="">
+  <ion-text class="title text medium">{{item.name}}</ion-text>
+  <ion-text class="sub-title text small medium" color="medium">{{item.nutrition}}</ion-text>
+  <div class="footer flex space-between vcenter full-width">
+    <ion-text color="primary" class="price text medium">{{item.price}}</ion-text>
+    <div class="add ion-activatable ripple-parent beautiful-shadow flex center vcenter">
+      +
+    </div>
+  </div>
+</div>

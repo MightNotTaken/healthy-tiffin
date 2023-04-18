@@ -1,4 +1,4 @@
-<div class="header full-width flex space-between center"  [class.transparent]="headerData.bgColor === 'transparent'">
+<div class="header flex space-between center full-width "  [class.transparent]="headerData.bgColor === 'transparent'">
   <ion-fab-button (click)="headerData.left?.handler()">
     <ion-icon [color]="headerData.color" *ngIf="headerData.left" [name]="headerData.left.icon" color="dark"></ion-icon>
   </ion-fab-button>
